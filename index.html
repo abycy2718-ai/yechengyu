@@ -1,470 +1,477 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<link rel="icon" href="images/logo.png" type="image/png">
-<link rel="shortcut icon" href="images/logo.png" type="image/png">
-<meta name="x-poe-datastore-behavior" content="local_only">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
-<meta http-equiv="x-dns-prefetch-control" content="off">
-<script src="https://puc.poecdn.net/authenticated_preview_page/standard.3ef2c256959faf5a756d.js"></script>
-<meta charset="utf-8">
-<title>Poe</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<script src="https://puc.poecdn.net/authenticated_preview_page/disableWebRTC.9710cebe07429a9e8e06.js"></script>
-<meta name="x-poe-allow-downloads" content="true">
-<meta name="x-poe-datastore-behavior" content="disabled">
-<script src="https://puc.poecdn.net/authenticated_preview_page/tw.b9024aecac666455e183.js"></script>
-<script src="https://puc.poecdn.net/authenticated_preview_page/deps.faccd16000d314dc16d5.js"></script>
-<script src="https://puc.poecdn.net/authenticated_preview_page/exports.b0f0f482cdeb5302b0b9.js"></script>
-<script src="https://puc.poecdn.net/authenticated_preview_page/renderer.75c73ae6b4235f62945a.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YE Chengyu (Allen)</title>
+  <link rel="icon" href="images/logo.png" type="image/png" />
 
-<script>
-Object.defineProperty(exports, "__esModule", {value: true});
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var _react = require('react'); var _react2 = _interopRequireDefault(_react);
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _lucidereact = require('lucide-react');
-var _framermotion = require('framer-motion');
-
-const PortfolioWebsite = () => {
-  const [activeTab, setActiveTab] = _react.useState.call(void 0, 'home');
-  const [isMenuOpen, setIsMenuOpen] = _react.useState.call(void 0, false);
-
-  // Navigation items
-  const navItems = [
-    { id: 'home', label: 'Home', icon: _lucidereact.Home },
-    { id: 'profile', label: 'Profile', icon: _lucidereact.User },
-    { id: 'research', label: 'Research', icon: _lucidereact.BookOpen },
-    { id: 'gallery', label: 'Gallery', icon: _lucidereact.Image },
-  ];
-
-  // Research Data
-  const researchPapers = [
-    {
-      title: "Application of Gravity Equation in Cross-Cultural Translation",
-      status: "Working Paper",
-      tags: ["Economics", "Translation", "Quantitative"]
-    },
-    {
-      title: "Musical Fans, Dear Evan Hansen, Skopos Theory",
-      authors: "with ZENG Xuke, 2025",
-      status: "Working Paper",
-      tags: ["Skopos Theory", "Musical Theatre"]
-    },
-    {
-      title: "Can Translation Strategies Be Revealed Empirically? Zipf’s Law in 28 Chinese Translations of Animal Farm",
-      authors: "with YANG Yuhang & ZENG Xuke, 2025",
-      status: "Working Paper",
-      tags: ["Empirical Linguistics", "Zipf's Law", "Translation"]
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --border:#e2e8f0;
+      --blue:#0f2a5f;
+      --blue2:#1e40af;
+      --shadow: 0 1px 2px rgba(15,23,42,.06), 0 10px 30px rgba(15,23,42,.10);
     }
-  ];
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:var(--blue2); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:980px;margin:0 auto;padding:0 16px}
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    nav{
+      height:64px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--blue)}
+    .brand-badge{
+      width:34px;height:34px;border-radius:12px;
+      display:grid;place-items:center;
+      background:var(--blue);color:#fff;font-weight:900;
+      box-shadow: 0 10px 18px rgba(15,42,95,.18);
+      flex:0 0 auto;
+    }
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{
+      padding:10px 4px;
+      font-weight:750;
+      color:var(--muted);
+      border-bottom:2px solid transparent;
+      text-decoration:none;
+      transition: .15s ease;
+    }
+    .nav-links a:hover{
+      color:var(--blue2);
+      border-bottom-color:#cbd5e1;
+    }
+    .nav-links a[aria-current="page"]{
+      color:var(--blue);
+      border-bottom-color:var(--blue);
+    }
 
-  // Gallery Data (auto-populated from gallery-manifest.json generated by GitHub Actions)
-  const [galleryImages, setGalleryImages] = _react.useState.call(void 0, []);
+    .menu-btn{
+      display:none;
+      border:1px solid var(--border);
+      background:#fff;
+      padding:8px 12px;
+      border-radius:12px;
+      font-weight:800;
+      color:var(--text);
+    }
+    .menu-btn:hover{background:#f1f5f9}
+    .mobile-menu{
+      display:grid;
+      gap:6px;
+      padding:0 0 12px;
+    }
+    .mobile-menu a{
+      padding:12px 10px;
+      border-radius:12px;
+      font-weight:800;
+      color:var(--muted);
+      text-decoration:none;
+    }
+    .mobile-menu a:hover{background:#f1f5f9}
+    .mobile-menu a[aria-current="page"]{background:#eff6ff;color:var(--blue)}
 
-  _react.useEffect.call(void 0, () => {
-    let cancelled = false;
+    @media (max-width: 760px){
+      .nav-links{display:none}
+      .menu-btn{display:inline-flex}
+    }
+    @media (min-width: 761px){
+      .mobile-menu{display:none !important}
+    }
 
-    fetch('gallery-manifest.json', { cache: 'no-store' })
-      .then((res) => res.ok ? res.json() : Promise.reject(new Error(`Failed to load gallery-manifest.json (HTTP ${res.status})`)))
-      .then((data) => {
-        if (cancelled) return;
+    main{padding:36px 0 64px}
+    section{display:none}
+    section.active{display:block}
 
-        const files = Array.isArray(data && data.images) ? data.images : [];
-        const imgs = files.map((src, idx) => {
-          const fileName = String(src).split('/').pop() || `Image ${idx + 1}`;
-          const base = fileName.replace(/\.[^/.]+$/, '');
-          const title = base.replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim();
+    .hero{
+      display:grid;
+      grid-template-columns: 240px 1fr;
+      gap:28px;
+      align-items:center;
+      padding:8px 0;
+    }
+    .avatar{
+      width:220px;height:220px;border-radius:999px;overflow:hidden;
+      border:4px solid #fff;
+      background:#e2e8f0;
+      box-shadow: var(--shadow);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .kicker{margin:0 0 6px;color:var(--blue);font-weight:900}
+    h1{margin:0 0 10px;letter-spacing:-.02em;font-size:clamp(28px, 4vw, 44px)}
+    h2{margin:0 0 8px;letter-spacing:-.01em;font-size:clamp(22px, 3vw, 32px)}
+    .lead{margin:0 0 18px;color:var(--muted);font-size:18px;line-height:1.65}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 14px;border-radius:999px;
+      font-weight:900;border:1px solid transparent;
+      text-decoration:none;transition:.15s ease;
+    }
+    .btn.primary{background:var(--blue);color:#fff;box-shadow:0 10px 20px rgba(15,42,95,.18)}
+    .btn.primary:hover{background:#113a7d;text-decoration:none}
+    .btn.secondary{background:#fff;color:var(--blue);border-color:var(--blue)}
+    .btn.secondary:hover{background:#eff6ff;text-decoration:none}
 
-          return {
-            id: idx + 1,
-            src,
-            title: title || `Image ${idx + 1}`,
-            description: fileName
-          };
-        });
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+    @media (max-width: 900px){ .cards{grid-template-columns:1fr} }
+    @media (max-width: 760px){
+      .hero{grid-template-columns:1fr;text-align:center}
+      .avatar{margin:0 auto}
+      .actions{justify-content:center}
+    }
 
-        setGalleryImages(
-          imgs.length ? imgs : [
-            { id: 1, src: "", title: "No gallery images found", description: "Add images (excluding logo.png and the portrait) to /images." }
-          ]
-        );
-      })
-      .catch(() => {
-        if (cancelled) return;
+    .card{
+      background:var(--card);
+      border:1px solid #eef2f7;
+      border-radius:18px;
+      padding:16px;
+      box-shadow: 0 1px 2px rgba(15,23,42,.05);
+    }
+    .card h3{margin:0 0 6px}
+    .muted{color:var(--muted)}
 
-        setGalleryImages([
-          { id: 1, src: "", title: "Gallery unavailable", description: "Could not load gallery-manifest.json." }
-        ]);
-      });
+    .paper .tag{
+      display:inline-block;
+      font-size:11px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight:950;
+      color:#1d4ed8;
+      background:#dbeafe;
+      padding:4px 8px;
+      border-radius:999px;
+    }
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .pill{
+      font-size:12px;
+      background:#f1f5f9;
+      color:var(--muted);
+      padding:4px 8px;
+      border-radius:10px;
+      border:1px solid var(--border);
+    }
 
-    return () => { cancelled = true; };
-  }, []);
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width: 900px){ .gallery-grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width: 560px){ .gallery-grid{grid-template-columns:1fr} }
 
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.5, staggerChildren: 0.1 }
-    },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -10 },
-    visible: { opacity: 1, x: 0 }
-  };
-
-  return (
-    _react2.default.createElement('div', { className: "min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-100"    ,}
-      /* Navigation */
-      , _react2.default.createElement('nav', { className: "sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200"      ,}
-        , _react2.default.createElement('div', { className: "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"    ,}
-          , _react2.default.createElement('div', { className: "flex justify-between h-16 items-center"   ,}
-            , _react2.default.createElement('div', { className: "flex-shrink-0 flex items-center gap-2"   ,}
-              , _react2.default.createElement('div', { className: "w-8 h-8 bg-blue-900 rounded-lg flex items-center justify-center text-white font-bold"        ,}, "Y")
-              , _react2.default.createElement('span', { className: "font-bold text-xl tracking-tight text-blue-900 hidden sm:block"     ,}, "YE Chengyu (Allen)"  )
-            )
-
-            /* Desktop Nav */
-            , _react2.default.createElement('div', { className: "hidden md:flex space-x-8"  ,}
-              , navItems.map((item) => (
-                _react2.default.createElement('button', {
-                  key: item.id,
-                  onClick: () => setActiveTab(item.id),
-                  className: `flex items-center gap-2 px-1 py-2 text-sm font-medium transition-colors border-b-2 ${
-                    activeTab === item.id 
-                    ? 'border-blue-900 text-blue-900' 
-                    : 'border-transparent text-slate-500 hover:text-blue-700 hover:border-slate-300'
-                  }`,}
-
-                  , _react2.default.createElement(item.icon, { size: 16,} )
-                  , item.label
-                )
-              ))
-            )
-
-            /* Mobile Menu Button */
-            , _react2.default.createElement('div', { className: "md:hidden",}
-              , _react2.default.createElement('button', { 
-                onClick: () => setIsMenuOpen(!isMenuOpen),
-                className: "p-2 rounded-md text-slate-600 hover:bg-slate-100"   ,}
-
-                , _react2.default.createElement('div', { className: "w-6 h-0.5 bg-slate-600 mb-1"   ,})
-                , _react2.default.createElement('div', { className: "w-6 h-0.5 bg-slate-600 mb-1"   ,})
-                , _react2.default.createElement('div', { className: "w-6 h-0.5 bg-slate-600"  ,})
-              )
-            )
-          )
-        )
-
-        /* Mobile Nav Dropdown */
-        , _react2.default.createElement(_framermotion.AnimatePresence, null
-          , isMenuOpen && (
-            _react2.default.createElement(_framermotion.motion.div, { 
-              initial: { height: 0, opacity: 0 },
-              animate: { height: 'auto', opacity: 1 },
-              exit: { height: 0, opacity: 0 },
-              className: "md:hidden bg-white border-b border-slate-200 overflow-hidden"    ,}
-
-              , _react2.default.createElement('div', { className: "px-4 pt-2 pb-6 space-y-1"   ,}
-                , navItems.map((item) => (
-                  _react2.default.createElement('button', {
-                    key: item.id,
-                    onClick: () => {
-                      setActiveTab(item.id);
-                      setIsMenuOpen(false);
-                    },
-                    className: `flex items-center gap-3 w-full px-3 py-3 rounded-md text-base font-medium ${
-                      activeTab === item.id ? 'bg-blue-50 text-blue-900' : 'text-slate-600 hover:bg-slate-50'
-                    }`,}
-
-                    , _react2.default.createElement(item.icon, { size: 20,} )
-                    , item.label
-                  )
-                ))
-              )
-            )
-          )
-        )
-      )
-
-      /* Main Content */
-      , _react2.default.createElement('main', { className: "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12"     ,}
-        , _react2.default.createElement(_framermotion.AnimatePresence, { mode: "wait",}
-          , activeTab === 'home' && (
-            _react2.default.createElement(_framermotion.motion.div, {
-              key: "home",
-              variants: containerVariants,
-              initial: "hidden",
-              animate: "visible",
-              exit: "exit",
-              className: "space-y-12",}
-
-              , _react2.default.createElement('section', { className: "flex flex-col md:flex-row items-center gap-12 py-8"     ,}
-                , _react2.default.createElement('div', { className: "w-48 h-48 md:w-64 md:h-64 relative flex-shrink-0"     ,}
-                  , _react2.default.createElement('div', { className: "absolute inset-0 bg-blue-900 rounded-full opacity-10 animate-pulse"     ,})
-                  , _react2.default.createElement('div', { className: "w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl bg-slate-200 flex items-center justify-center"          ,}
-                    , _react2.default.createElement('img', {
-                      src: "images/e42168f4d5afd1b48ce7be593b894f10.jpg",
-                      alt: "Portrait of YE Chengyu (Allen)",
-                      className: "w-full h-full object-cover",
-                      decoding: "async",
-                    ,})
-                  )
-                )
-                , _react2.default.createElement('div', { className: "flex-1 text-center md:text-left"  ,}
-                  , _react2.default.createElement(_framermotion.motion.h2, { variants: itemVariants, className: "text-blue-900 font-semibold text-lg mb-2"   ,}, "Research Assistant" )
-                  , _react2.default.createElement(_framermotion.motion.h1, { variants: itemVariants, className: "text-4xl md:text-5xl font-bold text-slate-900 mb-4"    ,}, "YE Chengyu (Allen)"  )
-                  , _react2.default.createElement(_framermotion.motion.p, { variants: itemVariants, className: "text-xl text-slate-600 mb-6 leading-relaxed"   ,}, "Pursuing B.A. in Translation at "
-                         , _react2.default.createElement('span', { className: "text-blue-800 font-medium italic"  ,}, "Lingnan University" ), ", Hong Kong. Exploring the intersection of empirical linguistics, economics, and political science."
-
-                  )
-                  , _react2.default.createElement(_framermotion.motion.div, { variants: itemVariants, className: "flex flex-wrap justify-center md:justify-start gap-4"    ,}
-                    , _react2.default.createElement('a', { href: "mailto:chengyuye@ln.hk", className: "inline-flex items-center gap-2 bg-blue-900 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition-all shadow-lg hover:shadow-blue-900/20"           ,}
-                      , _react2.default.createElement(_lucidereact.Mail, { size: 18,} ), "Contact Me"
-
-                    )
-                    , _react2.default.createElement('button', { onClick: () => setActiveTab('research'), className: "inline-flex items-center gap-2 bg-white text-blue-900 border border-blue-900 px-6 py-3 rounded-full hover:bg-blue-50 transition-all"           ,}
-                      , _react2.default.createElement(_lucidereact.BookOpen, { size: 18,} ), "View Research"
-
-                    )
-                  )
-                )
-              )
-
-              , _react2.default.createElement('section', { className: "grid md:grid-cols-3 gap-6"  ,}
-                , _react2.default.createElement('div', { className: "bg-white p-6 rounded-2xl shadow-sm border border-slate-100"     ,}
-                  , _react2.default.createElement('div', { className: "w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-900 mb-4"        ,}
-                    , _react2.default.createElement(_lucidereact.GraduationCap, { size: 24,} )
-                  )
-                  , _react2.default.createElement('h3', { className: "font-bold text-lg mb-2"  ,}, "Education")
-                  , _react2.default.createElement('p', { className: "text-slate-600 text-sm" ,}, "B.A. in Translation with Minors in Economics and Political Science."         )
-                )
-                , _react2.default.createElement('div', { className: "bg-white p-6 rounded-2xl shadow-sm border border-slate-100"     ,}
-                  , _react2.default.createElement('div', { className: "w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-900 mb-4"        ,}
-                    , _react2.default.createElement(_lucidereact.Globe, { size: 24,} )
-                  )
-                  , _react2.default.createElement('h3', { className: "font-bold text-lg mb-2"  ,}, "Affiliation")
-                  , _react2.default.createElement('p', { className: "text-slate-600 text-sm" ,}
-                    , "Research Assistant at the "
-                    , _react2.default.createElement('a', {
-                      href: "https://www.comparativeculturology.com/",
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                      className: "text-blue-700 font-medium hover:underline",
-                      title: "Comparative Culturology Lab – Understanding Cultures, Shaping Futures",
-                    ,}, "Comparative Culturology Lab")
-                    , "."
-                  )
-                )
-                , _react2.default.createElement('div', { className: "bg-white p-6 rounded-2xl shadow-sm border border-slate-100"     ,}
-                  , _react2.default.createElement('div', { className: "w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-900 mb-4"        ,}
-                    , _react2.default.createElement(_lucidereact.FileText, { size: 24,} )
-                  )
-                  , _react2.default.createElement('h3', { className: "font-bold text-lg mb-2"  ,}, "Interests")
-                  , _react2.default.createElement('p', { className: "text-slate-600 text-sm" ,}, "Empirical linguistics and interdisciplinary approaches to translation."      )
-                )
-              )
-            )
-          )
-
-          , activeTab === 'profile' && (
-            _react2.default.createElement(_framermotion.motion.div, {
-              key: "profile",
-              variants: containerVariants,
-              initial: "hidden",
-              animate: "visible",
-              exit: "exit",
-              className: "max-w-3xl mx-auto" ,}
-
-              , _react2.default.createElement('h2', { className: "text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3"      ,}
-                , _react2.default.createElement(_lucidereact.User, { className: "text-blue-900",} ), " Academic Profile"
-              )
-              , _react2.default.createElement('div', { className: "bg-white rounded-3xl p-8 shadow-sm border border-slate-100 space-y-8"      ,}
-                , _react2.default.createElement('div', null
-                  , _react2.default.createElement('h3', { className: "text-xl font-bold text-blue-900 mb-4"   ,}, "Biography")
-                  , _react2.default.createElement('p', { className: "text-slate-600 leading-relaxed mb-4"  ,}, "I am YE Chengyu (Allen), originally from Chengdu, China. My academic journey is defined by a curiosity for how language functions as a bridge between cultures and how it can be analyzed through quantitative and empirical lenses."
-
-                  )
-                  , _react2.default.createElement('p', { className: "text-slate-600 leading-relaxed" ,}, "Currently based in Hong Kong, I balance my undergraduate studies at Lingnan University with active research roles, focusing on the application of economic models and statistical laws to linguistic phenomena."
-
-                  )
-                )
-
-                , _react2.default.createElement('div', { className: "border-t border-slate-100 pt-8"  ,}
-                  , _react2.default.createElement('h3', { className: "text-xl font-bold text-blue-900 mb-4"   ,}, "Curriculum Vitae" )
-                  , _react2.default.createElement('div', { className: "flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-200 group hover:border-blue-300 transition-colors"          ,}
-                    , _react2.default.createElement('div', { className: "flex items-center gap-3"  ,}
-                      , _react2.default.createElement('div', { className: "p-2 bg-red-50 text-red-600 rounded-lg"   ,}
-                        , _react2.default.createElement(_lucidereact.FileText, { size: 24,} )
-                      )
-                      , _react2.default.createElement('div', null
-                        , _react2.default.createElement('p', { className: "font-medium text-slate-900" ,}, "cv_yechengyu.pdf")
-                        , _react2.default.createElement('p', { className: "text-xs text-slate-500" ,}, "Updated 2025" )
-                      )
-                    )
-                    , _react2.default.createElement('a', {
-                      href: "docs/cv_yechengyu.pdf",
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                      className: "p-2 text-blue-900 hover:bg-blue-100 rounded-full transition-colors",
-                    ,}
-                      , _react2.default.createElement(_lucidereact.ExternalLink, { size: 20,} )
-                    )
-                  )
-                )
-              )
-            )
-          )
-
-          , activeTab === 'research' && (
-            _react2.default.createElement(_framermotion.motion.div, {
-              key: "research",
-              variants: containerVariants,
-              initial: "hidden",
-              animate: "visible",
-              exit: "exit",
-              className: "space-y-8",}
-
-              , _react2.default.createElement('div', { className: "flex flex-col md:flex-row md:items-end justify-between gap-4"     ,}
-                , _react2.default.createElement('div', null
-                  , _react2.default.createElement('h2', { className: "text-3xl font-bold text-slate-900 mb-2"   ,}, "Research Portfolio" )
-                  , _react2.default.createElement('p', { className: "text-slate-600",}, "Working papers and ongoing academic inquiries."     )
-                )
-                , _react2.default.createElement('div', { className: "flex gap-2" ,}
-                  , _react2.default.createElement('span', { className: "px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full uppercase tracking-wider"        ,}, "Linguistics")
-                  , _react2.default.createElement('span', { className: "px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full uppercase tracking-wider"        ,}, "Economics")
-                )
-              )
-
-              , _react2.default.createElement('div', { className: "grid gap-6" ,}
-                , researchPapers.map((paper, index) => (
-                  _react2.default.createElement(_framermotion.motion.div, { 
-                    key: index,
-                    variants: itemVariants,
-                    className: "bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-blue-200 transition-all group"         ,}
-
-                    , _react2.default.createElement('div', { className: "flex justify-between items-start mb-4"   ,}
-                      , _react2.default.createElement('span', { className: "text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded uppercase tracking-wide"        ,}
-                        , paper.status
-                      )
-                      , _react2.default.createElement(_lucidereact.BookOpen, { size: 20, className: "text-slate-300 group-hover:text-blue-900 transition-colors"  ,} )
-                    )
-                    , _react2.default.createElement('h3', { className: "text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-900 transition-colors"     ,}
-                      , paper.title
-                    )
-                    , paper.authors && (
-                      _react2.default.createElement('p', { className: "text-slate-500 text-sm mb-4 italic"   ,}, paper.authors)
-                    )
-                    , _react2.default.createElement('div', { className: "flex flex-wrap gap-2 mt-4"   ,}
-                      , paper.tags.map(tag => (
-                        _react2.default.createElement('span', { key: tag, className: "text-[10px] font-medium bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md"      ,}, "#"
-                          , tag
-                        )
-                      ))
-                    )
-                  )
-                ))
-              )
-            )
-          )
-
-          , activeTab === 'gallery' && (
-            _react2.default.createElement(_framermotion.motion.div, {
-              key: "gallery",
-              variants: containerVariants,
-              initial: "hidden",
-              animate: "visible",
-              exit: "exit",
-              className: "space-y-8",}
-
-              , _react2.default.createElement('h2', { className: "text-3xl font-bold text-slate-900"  ,}, "Visual Gallery" )
-              , _react2.default.createElement('div', { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"    ,}
-                , galleryImages.map((img) => (
-                  _react2.default.createElement(_framermotion.motion.div, { 
-                    key: img.id,
-                    variants: itemVariants,
-                    whileHover: { y: -5 },
-                    className: "group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100"       ,}
-
-                    , _react2.default.createElement('div', { className: "aspect-[4/3] bg-slate-200 flex items-center justify-center relative overflow-hidden"      ,}
-                      , img.src
-                        ? _react2.default.createElement('img', {
-                          src: img.src,
-                          alt: img.title,
-                          className: "w-full h-full object-cover",
-                          loading: "lazy",
-                          decoding: "async",
-                        ,})
-                        : _react2.default.createElement(_lucidereact.Image, { size: 48, className: "text-slate-400 group-hover:scale-110 transition-transform duration-500"   ,} )
-                      , _react2.default.createElement('div', { className: "absolute inset-0 bg-blue-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6 text-center"          ,}
-                        , _react2.default.createElement('p', { className: "text-white text-sm font-medium"  ,}, img.description)
-                      )
-                    )
-                    , _react2.default.createElement('div', { className: "p-4",}
-                      , _react2.default.createElement('h3', { className: "font-bold text-slate-900" ,}, img.title)
-                    )
-                  )
-                ))
-              )
-            )
-          )
-        )
-      )
-
-      /* Footer */
-      , _react2.default.createElement('footer', { className: "bg-white border-t border-slate-200 mt-20 py-12"    ,}
-        , _react2.default.createElement('div', { className: "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"    ,}
-          , _react2.default.createElement('div', { className: "flex flex-col md:flex-row justify-between items-center gap-8"     ,}
-            , _react2.default.createElement('div', { className: "text-center md:text-left" ,}
-              , _react2.default.createElement('h3', { className: "font-bold text-blue-900 text-lg mb-2"   ,}, "YE Chengyu (Allen)"  )
-              , _react2.default.createElement('p', { className: "text-slate-500 text-sm" ,}, "© 2025 — All rights reserved."     )
-            )
-
-            , _react2.default.createElement('div', { className: "flex gap-6" ,}
-              , _react2.default.createElement('a', { href: "mailto:chengyuye@ln.hk", className: "text-slate-400 hover:text-blue-900 transition-colors"  ,}
-                , _react2.default.createElement(_lucidereact.Mail, { size: 24,} )
-              )
-              , _react2.default.createElement('a', { href: "#", className: "text-slate-400 hover:text-blue-900 transition-colors"  ,}
-                , _react2.default.createElement(_lucidereact.Linkedin, { size: 24,} )
-              )
-              , _react2.default.createElement('a', { href: "#", className: "text-slate-400 hover:text-blue-900 transition-colors"  ,}
-                , _react2.default.createElement(_lucidereact.Github, { size: 24,} )
-              )
-            )
-          )
-
-          , _react2.default.createElement('div', { className: "mt-8 pt-8 border-t border-slate-100 text-center"    ,}
-            , _react2.default.createElement('p', { className: "text-slate-400 text-xs" ,}, "If you have any questions, please feel free to contact me at"
-
-              , _react2.default.createElement('a', { href: "mailto:chengyuye@ln.hk", className: "text-blue-700 font-medium ml-1 hover:underline"   ,}, "chengyuye@ln.hk"), "."
-            )
-          )
-        )
-      )
-    )
-  );
-};
-
-exports. default = PortfolioWebsite;
-</script>
+    .img-card{
+      display:block;
+      background:#fff;
+      border:1px solid #eef2f7;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow: 0 1px 2px rgba(15,23,42,.05);
+      color:inherit;
+      text-decoration:none;
+      transition:.15s ease;
+    }
+    .img-card:hover{
+      border-color:#bfdbfe;
+      box-shadow: 0 12px 30px rgba(15,23,42,.10);
+      text-decoration:none;
+    }
+    .img-thumb{width:100%;aspect-ratio:4/3;background:#e2e8f0}
+    .img-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .img-meta{padding:12px 14px}
+    footer{
+      border-top:1px solid var(--border);
+      background:#fff;
+      padding:28px 0;
+    }
+    .footer-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+    .small{font-size:12px}
+  </style>
 </head>
 
 <body>
-  <div id="preview-app"></div>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="brand-badge" aria-hidden="true">Y</div>
+          <span>YE Chengyu (Allen)</span>
+        </div>
+
+        <div class="nav-links">
+          <a href="#home" data-tab="home">Home</a>
+          <a href="#profile" data-tab="profile">Profile</a>
+          <a href="#research" data-tab="research">Research</a>
+          <a href="#gallery" data-tab="gallery">Gallery</a>
+        </div>
+
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
+          Menu
+        </button>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenu" hidden>
+        <a href="#home" data-tab="home">Home</a>
+        <a href="#profile" data-tab="profile">Profile</a>
+        <a href="#research" data-tab="research">Research</a>
+        <a href="#gallery" data-tab="gallery">Gallery</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="active" data-section>
+      <div class="hero">
+        <div class="avatar">
+          <img src="images/e42168f4d5afd1b48ce7be593b894f10.jpg" alt="Portrait of YE Chengyu (Allen)" decoding="async" />
+        </div>
+
+        <div>
+          <p class="kicker">Research Assistant</p>
+          <h1>YE Chengyu (Allen)</h1>
+          <p class="lead">
+            Pursuing B.A. in Translation at <em style="color:var(--blue2);font-weight:800;">Lingnan University</em>, Hong Kong.
+            Exploring the intersection of empirical linguistics, economics, and political science.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:chengyuye@ln.hk">Contact Me</a>
+            <a class="btn secondary" href="#research" data-tab="research">View Research</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Education</h3>
+          <p class="muted small">B.A. in Translation with Minors in Economics and Political Science.</p>
+        </div>
+        <div class="card">
+          <h3>Affiliation</h3>
+          <p class="muted small">
+            Research Assistant at the
+            <a href="https://www.comparativeculturology.com/" target="_blank" rel="noopener noreferrer">Comparative Culturology Lab</a>.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Interests</h3>
+          <p class="muted small">Empirical linguistics and interdisciplinary approaches to translation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile" data-section>
+      <h2>Academic Profile</h2>
+      <div class="card" style="padding:22px">
+        <h3 style="margin-top:0;color:var(--blue)">Biography</h3>
+        <p class="muted">
+          I am YE Chengyu (Allen), originally from Chengdu, China. My academic journey is defined by a curiosity for how language functions as a bridge between cultures and how it can be analyzed through quantitative and empirical lenses.
+        </p>
+        <p class="muted" style="margin-bottom:0">
+          Currently based in Hong Kong, I balance my undergraduate studies at Lingnan University with active research roles, focusing on the application of economic models and statistical laws to linguistic phenomena.
+        </p>
+
+        <hr style="border:0;border-top:1px solid var(--border);margin:18px 0" />
+
+        <h3 style="margin:0 0 10px;color:var(--blue)">Curriculum Vitae</h3>
+        <a class="btn secondary" href="docs/cv_yechengyu.pdf" target="_blank" rel="noopener noreferrer">Open CV (PDF)</a>
+      </div>
+    </section>
+
+    <section id="research" data-section>
+      <h2>Research Portfolio</h2>
+      <p class="muted" style="margin-top:6px">Working papers and ongoing academic inquiries.</p>
+
+      <div style="display:grid;gap:14px;margin-top:18px">
+        <article class="card paper">
+          <div class="tag">Working Paper</div>
+          <h3 style="margin:10px 0 6px">Application of Gravity Equation in Cross-Cultural Translation</h3>
+          <div class="tags">
+            <span class="pill">#Economics</span>
+            <span class="pill">#Translation</span>
+            <span class="pill">#Quantitative</span>
+          </div>
+        </article>
+
+        <article class="card paper">
+          <div class="tag">Working Paper</div>
+          <h3 style="margin:10px 0 6px">Musical Fans, Dear Evan Hansen, Skopos Theory</h3>
+          <p class="muted" style="margin:0 0 10px;font-style:italic">with ZENG Xuke, 2025</p>
+          <div class="tags">
+            <span class="pill">#Skopos Theory</span>
+            <span class="pill">#Musical Theatre</span>
+          </div>
+        </article>
+
+        <article class="card paper">
+          <div class="tag">Working Paper</div>
+          <h3 style="margin:10px 0 6px">
+            Can Translation Strategies Be Revealed Empirically? Zipf’s Law in 28 Chinese Translations of Animal Farm
+          </h3>
+          <p class="muted" style="margin:0 0 10px;font-style:italic">with YANG Yuhang &amp; ZENG Xuke, 2025</p>
+          <div class="tags">
+            <span class="pill">#Empirical Linguistics</span>
+            <span class="pill">#Zipf's Law</span>
+            <span class="pill">#Translation</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery" data-section>
+      <h2>Visual Gallery</h2>
+      <p class="muted" id="galleryStatus" style="margin-top:6px">Loading gallery…</p>
+      <div class="gallery-grid" id="galleryGrid" style="margin-top:18px"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>
+        <strong style="color:var(--blue)">YE Chengyu (Allen)</strong>
+        <div class="muted small" style="margin-top:4px">© 2025 — All rights reserved.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <a class="muted" href="mailto:chengyuye@ln.hk">chengyuye@ln.hk</a>
+        <span class="muted" aria-hidden="true">•</span>
+        <a class="muted" href="#" title="Add your LinkedIn URL">LinkedIn</a>
+        <span class="muted" aria-hidden="true">•</span>
+        <a class="muted" href="#" title="Add your GitHub URL">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const sections = Array.from(document.querySelectorAll("[data-section]"));
+      const links = Array.from(document.querySelectorAll("a[data-tab]"));
+
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      function closeMobileMenu() {
+        if (!mobileMenu || !menuBtn) return;
+        mobileMenu.hidden = true;
+        menuBtn.setAttribute("aria-expanded", "false");
+      }
+
+      function setActive(tabId, { pushHash = true } = {}) {
+        sections.forEach(s => s.classList.toggle("active", s.id === tabId));
+        links.forEach(a => {
+          const isActive = a.getAttribute("data-tab") === tabId;
+          if (isActive) a.setAttribute("aria-current", "page");
+          else a.removeAttribute("aria-current");
+        });
+        if (pushHash && location.hash !== "#" + tabId) history.pushState(null, "", "#" + tabId);
+      }
+
+      links.forEach(a => {
+        a.addEventListener("click", (e) => {
+          const tabId = a.getAttribute("data-tab");
+          if (!tabId) return;
+          e.preventDefault();
+          setActive(tabId);
+          closeMobileMenu();
+        });
+      });
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          const opening = mobileMenu.hidden;
+          mobileMenu.hidden = !opening;
+          menuBtn.setAttribute("aria-expanded", String(opening));
+        });
+
+        document.addEventListener("click", (e) => {
+          if (mobileMenu.hidden) return;
+          const t = e.target;
+          if (t === menuBtn || mobileMenu.contains(t)) return;
+          closeMobileMenu();
+        });
+      }
+
+      function syncFromHash() {
+        const tabId = (location.hash || "#home").slice(1);
+        const exists = sections.some(s => s.id === tabId);
+        setActive(exists ? tabId : "home", { pushHash: false });
+      }
+      window.addEventListener("hashchange", syncFromHash);
+      window.addEventListener("popstate", syncFromHash);
+      syncFromHash();
+
+      // Gallery
+      const statusEl = document.getElementById("galleryStatus");
+      const gridEl = document.getElementById("galleryGrid");
+
+      async function loadGallery() {
+        if (!statusEl || !gridEl) return;
+        try {
+          const res = await fetch("gallery-manifest.json", { cache: "no-store" });
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const data = await res.json();
+          const images = Array.isArray(data && data.images) ? data.images : [];
+
+          gridEl.innerHTML = "";
+          if (!images.length) {
+            statusEl.textContent = "No gallery images found. Add images to /images (excluding logo.png and the portrait).";
+            return;
+          }
+
+          statusEl.textContent = "Click an image to open full size.";
+
+          for (const src of images) {
+            const file = String(src).split("/").pop() || src;
+            const title = file.replace(/\.[^/.]+$/, "").replace(/[_-]+/g, " ").trim() || file;
+
+            const card = document.createElement("a");
+            card.className = "img-card";
+            card.href = src;
+            card.target = "_blank";
+            card.rel = "noopener noreferrer";
+            card.title = file;
+
+            const thumb = document.createElement("div");
+            thumb.className = "img-thumb";
+
+            const img = document.createElement("img");
+            img.src = src;
+            img.alt = title;
+            img.loading = "lazy";
+            img.decoding = "async";
+
+            thumb.appendChild(img);
+
+            const meta = document.createElement("div");
+            meta.className = "img-meta";
+            meta.innerHTML = "<div style='font-weight:950'>" + title + "</div><div class='muted small' style='margin-top:4px'>" + file + "</div>";
+
+            card.appendChild(thumb);
+            card.appendChild(meta);
+            gridEl.appendChild(card);
+          }
+        } catch (e) {
+          statusEl.textContent = "Gallery unavailable (could not load gallery-manifest.json). Check that your GitHub Actions workflow deployed it.";
+        }
+      }
+
+      loadGallery();
+    })();
+  </script>
 </body>
 </html>
