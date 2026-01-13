@@ -1,0 +1,80 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "images/**"
+      - "docs/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare site artifact (includes auto gallery manifest)
+        run: |
+          rm -rf site
+          mkdir -p site
+          cp -R index.html images docs site/
+          touch site/.nojekyll
+
+          python - << 'PY'
+          import json
+          from pathlib import Path
+
+          site_dir = Path("site")
+          images_dir = site_dir / "images"
+
+          exclude = {
+              "logo.png",
+              "e42168f4d5afd1b48ce7be593b894f10.jpg",
+          }
+          exts = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"}
+
+          images = []
+          if images_dir.exists():
+              for p in sorted(images_dir.rglob("*")):
+                  if not p.is_file():
+                      continue
+                  if p.suffix.lower() not in exts:
+                      continue
+                  if p.name in exclude:
+                      continue
+                  images.append(p.relative_to(site_dir).as_posix())
+
+          (site_dir / "gallery-manifest.json").write_text(
+              json.dumps({"images": images}, ensure_ascii=False, indent=2),
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
