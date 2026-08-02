@@ -3,217 +3,596 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YE Chengyu (Allen)</title>
+  <meta name="description" content="Academic profile and research portfolio of YE Chengyu (Allen), a research assistant working in quantitative sociology, cultural change, and empirical linguistics." />
+  <meta name="theme-color" content="#102a56" />
+  <meta property="og:title" content="YE Chengyu (Allen) | Academic Profile" />
+  <meta property="og:description" content="Research in individualism–collectivism, cultural change, quantitative sociology, and empirical linguistics." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://abycy2718-ai.github.io/yechengyu/" />
+  <meta property="og:image" content="https://abycy2718-ai.github.io/yechengyu/images/e42168f4d5afd1b48ce7be593b894f10.jpg" />
+  <link rel="canonical" href="https://abycy2718-ai.github.io/yechengyu/" />
   <link rel="icon" href="images/logo.png" type="image/png" />
+  <title>YE Chengyu (Allen) | Academic Profile</title>
 
   <style>
     :root{
-      --bg:#f8fafc;
+      --bg:#f7f9fc;
       --card:#ffffff;
-      --text:#0f172a;
-      --muted:#475569;
-      --border:#e2e8f0;
-      --blue:#0f2a5f;
-      --blue2:#1e40af;
-      --shadow: 0 1px 2px rgba(15,23,42,.06), 0 10px 30px rgba(15,23,42,.10);
+      --text:#101828;
+      --muted:#526174;
+      --border:#dfe6ef;
+      --blue:#102a56;
+      --blue-2:#1d4ed8;
+      --blue-soft:#edf3ff;
+      --review:#7c3aed;
+      --review-soft:#f3e8ff;
+      --working:#1d4ed8;
+      --working-soft:#dbeafe;
+      --shadow-sm:0 1px 2px rgba(16,24,40,.05);
+      --shadow:0 16px 40px rgba(16,42,86,.10);
+      --radius:18px;
     }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background:var(--bg);
+      min-height:100vh;
+      font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(circle at 88% 2%, rgba(29,78,216,.07), transparent 26rem),
+        var(--bg);
       color:var(--text);
-      line-height:1.5;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
-    a{color:var(--blue2); text-decoration:none}
+
+    img{max-width:100%}
+    a{color:var(--blue-2);text-decoration:none}
     a:hover{text-decoration:underline}
-    .container{max-width:980px;margin:0 auto;padding:0 16px}
-    header{
-      position:sticky; top:0; z-index:50;
-      background:rgba(255,255,255,.86);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--border);
+    button,input,select,textarea{font:inherit}
+
+    :focus-visible{
+      outline:3px solid rgba(29,78,216,.28);
+      outline-offset:3px;
+      border-radius:8px;
     }
+
+    .skip-link{
+      position:fixed;
+      top:10px;
+      left:10px;
+      z-index:1000;
+      transform:translateY(-160%);
+      padding:9px 13px;
+      border-radius:10px;
+      background:var(--blue);
+      color:#fff;
+      font-weight:800;
+    }
+    .skip-link:focus{transform:translateY(0);text-decoration:none}
+
+    .container{width:min(1120px,calc(100% - 32px));margin:0 auto}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.90);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(223,230,239,.92);
+    }
+
     nav{
-      height:64px;
+      min-height:68px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
+      gap:18px;
     }
-    .brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--blue)}
-    .brand-badge{
-      width:34px;height:34px;border-radius:12px;
-      display:grid;place-items:center;
-      background:var(--blue);color:#fff;font-weight:900;
-      box-shadow: 0 10px 18px rgba(15,42,95,.18);
-      flex:0 0 auto;
-    }
-    .nav-links{display:flex;gap:18px;align-items:center}
-    .nav-links a{
-      padding:10px 4px;
-      font-weight:750;
-      color:var(--muted);
-      border-bottom:2px solid transparent;
-      text-decoration:none;
-      transition: .15s ease;
-    }
-    .nav-links a:hover{
-      color:var(--blue2);
-      border-bottom-color:#cbd5e1;
-    }
-    .nav-links a[aria-current="page"]{
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      min-width:0;
       color:var(--blue);
-      border-bottom-color:var(--blue);
+      font-weight:850;
+      letter-spacing:-.01em;
+      text-decoration:none;
     }
+    .brand:hover{text-decoration:none}
+
+    .brand-badge{
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+      background:linear-gradient(145deg,var(--blue),#1d4a91);
+      color:#fff;
+      font-weight:900;
+      box-shadow:0 8px 18px rgba(16,42,86,.20);
+    }
+
+    .brand-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .nav-links a{
+      padding:22px 2px 19px;
+      border-bottom:3px solid transparent;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:750;
+      text-decoration:none;
+      transition:color .15s ease,border-color .15s ease;
+    }
+    .nav-links a:hover{color:var(--blue);border-bottom-color:#c9d6e8}
+    .nav-links a[aria-current="page"]{color:var(--blue);border-bottom-color:var(--blue)}
 
     .menu-btn{
       display:none;
       border:1px solid var(--border);
       background:#fff;
+      color:var(--blue);
       padding:8px 12px;
-      border-radius:12px;
+      border-radius:11px;
       font-weight:800;
-      color:var(--text);
+      cursor:pointer;
     }
-    .menu-btn:hover{background:#f1f5f9}
-    .mobile-menu{
-      display:grid;
-      gap:6px;
-      padding:0 0 12px;
-    }
+    .menu-btn:hover{background:#f3f6fb}
+
+    .mobile-menu{display:grid;gap:5px;padding:0 0 14px}
     .mobile-menu a{
-      padding:12px 10px;
-      border-radius:12px;
-      font-weight:800;
+      padding:11px 12px;
+      border-radius:11px;
       color:var(--muted);
+      font-weight:750;
       text-decoration:none;
     }
-    .mobile-menu a:hover{background:#f1f5f9}
-    .mobile-menu a[aria-current="page"]{background:#eff6ff;color:var(--blue)}
+    .mobile-menu a:hover{background:#f2f5fa;color:var(--blue)}
+    .mobile-menu a[aria-current="page"]{background:var(--blue-soft);color:var(--blue)}
 
-    @media (max-width: 760px){
-      .nav-links{display:none}
-      .menu-btn{display:inline-flex}
-    }
-    @media (min-width: 761px){
-      .mobile-menu{display:none !important}
-    }
-
-    main{padding:36px 0 64px}
-    section{display:none}
+    main{padding:42px 0 72px}
+    section{display:none;animation:sectionIn .22s ease both}
     section.active{display:block}
+    @keyframes sectionIn{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+    .eyebrow{
+      margin:0 0 8px;
+      color:var(--blue-2);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+
+    h1,h2,h3{color:var(--text);line-height:1.22}
+    h1{margin:0 0 14px;font-size:clamp(34px,5vw,54px);letter-spacing:-.045em}
+    h2{margin:0;font-size:clamp(27px,3.4vw,38px);letter-spacing:-.035em}
+    h3{margin:0;font-size:18px;letter-spacing:-.012em}
+    p{margin-top:0}
+    .muted{color:var(--muted)}
+    .small{font-size:13px}
 
     .hero{
+      position:relative;
       display:grid;
-      grid-template-columns: 240px 1fr;
-      gap:28px;
+      grid-template-columns:230px minmax(0,1fr);
+      gap:40px;
       align-items:center;
-      padding:8px 0;
+      overflow:hidden;
+      padding:38px;
+      border:1px solid var(--border);
+      border-radius:24px;
+      background:rgba(255,255,255,.94);
+      box-shadow:var(--shadow-sm);
     }
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-110px;
+      bottom:-130px;
+      width:330px;
+      height:330px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(29,78,216,.12),rgba(29,78,216,0) 68%);
+      pointer-events:none;
+    }
+    .hero-copy{position:relative;z-index:1}
+
     .avatar{
-      width:220px;height:220px;border-radius:999px;overflow:hidden;
-      border:4px solid #fff;
-      background:#e2e8f0;
-      box-shadow: var(--shadow);
+      position:relative;
+      z-index:1;
+      width:220px;
+      aspect-ratio:1;
+      border-radius:50%;
+      overflow:hidden;
+      border:5px solid #fff;
+      background:#e5eaf1;
+      box-shadow:0 18px 36px rgba(16,42,86,.17);
     }
     .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    .kicker{margin:0 0 6px;color:var(--blue);font-weight:900}
-    h1{margin:0 0 10px;letter-spacing:-.02em;font-size:clamp(28px, 4vw, 44px)}
-    h2{margin:0 0 8px;letter-spacing:-.01em;font-size:clamp(22px, 3vw, 32px)}
-    .lead{margin:0 0 18px;color:var(--muted);font-size:18px;line-height:1.65}
-    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:10px 14px;border-radius:999px;
-      font-weight:900;border:1px solid transparent;
-      text-decoration:none;transition:.15s ease;
-    }
-    .btn.primary{background:var(--blue);color:#fff;box-shadow:0 10px 20px rgba(15,42,95,.18)}
-    .btn.primary:hover{background:#113a7d;text-decoration:none}
-    .btn.secondary{background:#fff;color:var(--blue);border-color:var(--blue)}
-    .btn.secondary:hover{background:#eff6ff;text-decoration:none}
 
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
-    @media (max-width: 900px){ .cards{grid-template-columns:1fr} }
-    @media (max-width: 760px){
-      .hero{grid-template-columns:1fr;text-align:center}
-      .avatar{margin:0 auto}
-      .actions{justify-content:center}
+    .lead{
+      max-width:720px;
+      margin:0;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.72;
     }
+    .lead strong{color:var(--blue);font-weight:800}
+
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:9px 15px;
+      border:1px solid transparent;
+      border-radius:999px;
+      font-weight:800;
+      text-decoration:none;
+      transition:transform .15s ease,background .15s ease,border-color .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px);text-decoration:none}
+    .btn.primary{background:var(--blue);color:#fff;box-shadow:0 9px 20px rgba(16,42,86,.18)}
+    .btn.primary:hover{background:#173a72}
+    .btn.secondary{background:#fff;color:var(--blue);border-color:#afbdd0}
+    .btn.secondary:hover{border-color:var(--blue);background:#f8faff}
+    .btn.tertiary{background:var(--blue-soft);color:var(--blue)}
+    .btn.tertiary:hover{background:#e1ebff}
+
+    .stat-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+    .stat-card{
+      padding:17px 18px;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:rgba(255,255,255,.90);
+      box-shadow:var(--shadow-sm);
+    }
+    .stat-value{color:var(--blue);font-size:24px;font-weight:900;letter-spacing:-.03em}
+    .stat-label{margin-top:2px;color:var(--muted);font-size:13px}
+
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:22px;
+    }
+    .section-intro{max-width:720px;margin:7px 0 0;color:var(--muted)}
+    .updated{color:#6b7788;font-size:12px;white-space:nowrap}
 
     .card{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
       background:var(--card);
-      border:1px solid #eef2f7;
-      border-radius:18px;
-      padding:16px;
-      box-shadow: 0 1px 2px rgba(15,23,42,.05);
+      box-shadow:var(--shadow-sm);
     }
-    .card h3{margin:0 0 6px}
-    .muted{color:var(--muted)}
 
-    .paper .tag{
-      display:inline-block;
-      font-size:11px;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      font-weight:950;
-      color:#1d4ed8;
-      background:#dbeafe;
+    .profile-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.45fr) minmax(260px,.75fr);
+      gap:18px;
+    }
+    .profile-main{padding:26px}
+    .profile-main p{color:var(--muted)}
+    .profile-main p:last-of-type{margin-bottom:0}
+    .profile-side{display:grid;gap:14px}
+    .detail-card{padding:20px}
+    .detail-card h3{color:var(--blue);margin-bottom:7px}
+    .detail-card p{margin:0;color:var(--muted);font-size:14px}
+    .divider{border:0;border-top:1px solid var(--border);margin:23px 0}
+    .link-row{display:flex;flex-wrap:wrap;gap:10px}
+
+    .research-toolbar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:0 0 17px;
+    }
+    .filter-btn{
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:#fff;
+      color:var(--muted);
+      padding:7px 12px;
+      font-size:13px;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .filter-btn:hover{border-color:#b8c5d8;color:var(--blue)}
+    .filter-btn[aria-pressed="true"]{border-color:var(--blue);background:var(--blue);color:#fff}
+
+    .research-list{display:grid;gap:14px}
+    .paper{
+      position:relative;
+      overflow:hidden;
+      padding:22px 23px 21px;
+      transition:border-color .15s ease,box-shadow .15s ease,transform .15s ease;
+    }
+    .paper::before{
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      width:4px;
+      background:var(--working);
+    }
+    .paper[data-status="review"]::before{background:var(--review)}
+    .paper:hover{transform:translateY(-1px);border-color:#c5d1e0;box-shadow:0 12px 28px rgba(16,42,86,.08)}
+    .paper[hidden]{display:none}
+
+    .paper-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .paper-title{margin:10px 0 8px;font-size:19px;line-height:1.38}
+    .paper-role{
+      flex:0 0 auto;
+      padding-top:2px;
+      color:#66758a;
+      font-size:12px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .status{
+      display:inline-flex;
+      align-items:center;
+      width:max-content;
       padding:4px 8px;
       border-radius:999px;
+      background:var(--working-soft);
+      color:var(--working);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.075em;
+      text-transform:uppercase;
     }
-    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .paper[data-status="review"] .status{background:var(--review-soft);color:var(--review)}
+    .authors{margin:0 0 7px;color:#4c5c70;font-size:13px;font-style:italic}
+    .venue{margin:0 0 10px;color:var(--blue);font-size:13px;font-weight:750}
+    .paper-summary{margin:0;color:var(--muted);font-size:14px;line-height:1.62}
+    .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
     .pill{
-      font-size:12px;
-      background:#f1f5f9;
-      color:var(--muted);
       padding:4px 8px;
-      border-radius:10px;
       border:1px solid var(--border);
+      border-radius:9px;
+      background:#f7f9fc;
+      color:#5f6f82;
+      font-size:11px;
+      font-weight:700;
     }
 
-    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media (max-width: 900px){ .gallery-grid{grid-template-columns:repeat(2,1fr)} }
-    @media (max-width: 560px){ .gallery-grid{grid-template-columns:1fr} }
-
+    .gallery-note{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:17px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
     .img-card{
       display:block;
-      background:#fff;
-      border:1px solid #eef2f7;
-      border-radius:18px;
+      width:100%;
       overflow:hidden;
-      box-shadow: 0 1px 2px rgba(15,23,42,.05);
+      padding:0;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:#fff;
       color:inherit;
-      text-decoration:none;
-      transition:.15s ease;
+      text-align:left;
+      box-shadow:var(--shadow-sm);
+      cursor:zoom-in;
+      transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;
     }
-    .img-card:hover{
-      border-color:#bfdbfe;
-      box-shadow: 0 12px 30px rgba(15,23,42,.10);
-      text-decoration:none;
+    .img-card:hover{transform:translateY(-2px);border-color:#b9c8dc;box-shadow:0 15px 34px rgba(16,42,86,.10)}
+    .img-thumb{width:100%;aspect-ratio:16/10;overflow:hidden;background:#e8edf4}
+    .img-thumb img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .28s ease}
+    .img-card:hover .img-thumb img{transform:scale(1.018)}
+    .img-meta{padding:14px 15px 15px}
+    .img-title{font-weight:850;color:var(--text)}
+    .img-caption{margin-top:3px;color:var(--muted);font-size:12px}
+
+    dialog.lightbox{
+      width:min(1020px,calc(100% - 28px));
+      max-height:calc(100vh - 28px);
+      padding:0;
+      overflow:hidden;
+      border:0;
+      border-radius:18px;
+      background:#0b1220;
+      color:#fff;
+      box-shadow:0 30px 90px rgba(0,0,0,.45);
     }
-    .img-thumb{width:100%;aspect-ratio:4/3;background:#e2e8f0}
-    .img-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-    .img-meta{padding:12px 14px}
+    dialog.lightbox::backdrop{background:rgba(3,10,22,.78);backdrop-filter:blur(4px)}
+    .lightbox-frame{position:relative;display:grid;grid-template-rows:minmax(0,1fr) auto;max-height:calc(100vh - 28px)}
+    .lightbox-image-wrap{display:grid;place-items:center;min-height:240px;overflow:auto;background:#080e19}
+    .lightbox-image{display:block;max-width:100%;max-height:calc(100vh - 130px);object-fit:contain}
+    .lightbox-meta{padding:14px 54px 15px 17px;background:#101a2b}
+    .lightbox-title{font-weight:850}
+    .lightbox-caption{margin-top:2px;color:#bcc8d8;font-size:13px}
+    .lightbox-close{
+      position:absolute;
+      top:12px;
+      right:12px;
+      width:36px;
+      height:36px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.28);
+      border-radius:50%;
+      background:rgba(8,14,25,.72);
+      color:#fff;
+      font-size:21px;
+      line-height:1;
+      cursor:pointer;
+    }
+    .lightbox-close:hover{background:#17243a}
+
     footer{
       border-top:1px solid var(--border);
-      background:#fff;
-      padding:28px 0;
+      background:rgba(255,255,255,.86);
+      padding:27px 0;
     }
-    .footer-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
-    .small{font-size:12px}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .footer-name{color:var(--blue);font-weight:850}
+    .footer-links{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px}
+    .footer-links a{color:var(--muted)}
+    .dot{color:#a5afbd}
+
+    @media (max-width:840px){
+      .hero{grid-template-columns:1fr;text-align:center;padding:30px 24px}
+      .avatar{margin:0 auto}
+      .lead{margin:0 auto}
+      .actions{justify-content:center}
+      .profile-grid{grid-template-columns:1fr}
+      .section-head{align-items:flex-start;flex-direction:column}
+      .updated{white-space:normal}
+    }
+
+    @media (max-width:760px){
+      .nav-links{display:none}
+      .menu-btn{display:inline-flex}
+      main{padding-top:28px}
+      .stat-grid{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:1fr}
+      .paper-top{display:block}
+      .paper-role{margin-top:6px;white-space:normal}
+    }
+
+    @media (min-width:761px){.mobile-menu{display:none !important}}
+
+    @media (max-width:460px){
+      .container{width:min(100% - 22px,1120px)}
+      .brand-name{max-width:190px}
+      .hero{padding:24px 17px}
+      .avatar{width:188px}
+      .profile-main,.paper{padding:20px}
+      h1{font-size:35px}
+    }
+
+    /* Concise homepage, retaining the original layout and information hierarchy */
+    .hero.hero-simple{
+      position:relative;
+      grid-template-columns:240px minmax(0,1fr);
+      gap:28px;
+      align-items:center;
+      overflow:visible;
+      padding:8px 0;
+      border:0;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none;
+    }
+    .hero.hero-simple::after{display:none}
+    .hero-simple .avatar{
+      width:220px;
+      border-width:4px;
+      box-shadow:var(--shadow);
+    }
+    .home-kicker{
+      margin:0 0 6px;
+      color:var(--blue);
+      font-weight:900;
+    }
+    #home .hero-simple h1{
+      margin:0 0 10px;
+      font-size:clamp(28px,4vw,44px);
+      letter-spacing:-.02em;
+    }
+    #home .hero-simple .lead{
+      margin:0 0 18px;
+      max-width:720px;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.65;
+    }
+    #home .hero-simple .actions{margin-top:14px}
+    .home-cards{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:26px;
+    }
+    .home-card{padding:16px}
+    .home-card h3{margin:0 0 6px;color:var(--text)}
+    .home-card p{margin:0;color:var(--muted);font-size:13px}
+    .home-card a{font-weight:750}
+
+    @media (max-width:900px){
+      .home-cards{grid-template-columns:1fr}
+    }
+    @media (max-width:840px){
+      .hero.hero-simple{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding:8px 0;
+      }
+      .hero-simple .avatar{margin:0 auto}
+      #home .hero-simple .lead{margin-left:auto;margin-right:auto}
+      #home .hero-simple .actions{justify-content:center}
+    }
+    @media (max-width:460px){
+      .hero-simple .avatar{width:188px}
+      #home .hero-simple h1{font-size:35px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto !important;animation:none !important;transition:none !important}
+    }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "YE Chengyu",
+    "alternateName": "Allen Ye",
+    "url": "https://abycy2718-ai.github.io/yechengyu/",
+    "email": "mailto:chengyuye@ln.hk",
+    "jobTitle": "Research Assistant",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Lingnan University"
+    },
+    "sameAs": [
+      "https://github.com/abycy2718-ai",
+      "https://www.linkedin.com/in/yechengyu/"
+    ],
+    "knowsAbout": [
+      "Individualism–Collectivism",
+      "Cultural Change",
+      "Quantitative Sociology",
+      "Empirical Linguistics"
+    ]
+  }
+  </script>
 </head>
 
 <body>
+  <a class="skip-link" href="#mainContent">Skip to content</a>
+
   <header>
     <div class="container">
-      <nav>
-        <div class="brand">
-          <div class="brand-badge" aria-hidden="true">Y</div>
-          <span>YE Chengyu (Allen)</span>
-        </div>
+      <nav aria-label="Primary navigation">
+        <a class="brand" href="#home" data-tab="home" aria-label="YE Chengyu home">
+          <span class="brand-badge" aria-hidden="true">Y</span>
+          <span class="brand-name">YE Chengyu (Allen)</span>
+        </a>
 
         <div class="nav-links">
           <a href="#home" data-tab="home">Home</a>
@@ -222,9 +601,7 @@
           <a href="#gallery" data-tab="gallery">Gallery</a>
         </div>
 
-        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
-          Menu
-        </button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
       </nav>
 
       <div class="mobile-menu" id="mobileMenu" hidden>
@@ -236,20 +613,20 @@
     </div>
   </header>
 
-  <main class="container">
+  <main class="container" id="mainContent">
     <section id="home" class="active" data-section>
-      <div class="hero">
+      <div class="hero hero-simple">
         <div class="avatar">
           <img src="images/e42168f4d5afd1b48ce7be593b894f10.jpg" alt="Portrait of YE Chengyu (Allen)" decoding="async" />
         </div>
 
-        <div>
-          <p class="kicker">Research Assistant</p>
+        <div class="hero-copy">
+          <p class="home-kicker">Research Assistant</p>
           <h1>YE Chengyu (Allen)</h1>
           <p class="lead">
-            Pursuing B.A. in Translation at <em style="color:var(--blue2);font-weight:800;">Lingnan University</em>, Hong Kong.
-            Exploring the intersection of empirical linguistics, economics, and political science.
+            B.A. (Hons) Translation student at Lingnan University, Hong Kong, working across empirical linguistics and quantitative social research.
           </p>
+
           <div class="actions">
             <a class="btn primary" href="mailto:chengyuye@ln.hk">Contact Me</a>
             <a class="btn secondary" href="#research" data-tab="research">View Research</a>
@@ -257,102 +634,301 @@
         </div>
       </div>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Education</h3>
-          <p class="muted small">B.A. in Translation with Minors in Economics and Political Science.</p>
-        </div>
-        <div class="card">
-          <h3>Affiliation</h3>
-          <p class="muted small">
-            Research Assistant at the
+      <div class="home-cards" aria-label="Academic overview">
+        <article class="card home-card">
+          <h3>Research Interests</h3>
+          <p>Individualism–Collectivism, Cultural Change, Quantitative Sociology, and Empirical Linguistics.</p>
+        </article>
+
+        <article class="card home-card">
+          <h3>Employment &amp; Affiliation</h3>
+          <p>
+            Research Assistant at Lingnan University and Lab Assistant at the
             <a href="https://www.comparativeculturology.com/" target="_blank" rel="noopener noreferrer">Comparative Culturology Lab</a>.
           </p>
-        </div>
-        <div class="card">
-          <h3>Interests</h3>
-          <p class="muted small">Empirical linguistics and interdisciplinary approaches to translation.</p>
-        </div>
+        </article>
+
+        <article class="card home-card">
+          <h3>Education</h3>
+          <p>B.A. (Hons) Translation, with minors in Economics and Political Science, Lingnan University.</p>
+        </article>
       </div>
     </section>
 
     <section id="profile" data-section>
-      <h2>Academic Profile</h2>
-      <div class="card" style="padding:22px">
-        <h3 style="margin-top:0;color:var(--blue)">Biography</h3>
-        <p class="muted">
-          I am YE Chengyu (Allen), originally from Chengdu, China. My academic journey is defined by a curiosity for how language functions as a bridge between cultures and how it can be analyzed through quantitative and empirical lenses.
-        </p>
-        <p class="muted" style="margin-bottom:0">
-          Currently based in Hong Kong, I balance my undergraduate studies at Lingnan University with active research roles, focusing on the application of economic models and statistical laws to linguistic phenomena.
-        </p>
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Background</p>
+          <h2>Academic profile</h2>
+          <p class="section-intro">Training in translation, economics, political science, and quantitative social research.</p>
+        </div>
+        <div class="updated">Profile updated August 2026</div>
+      </div>
 
-        <hr style="border:0;border-top:1px solid var(--border);margin:18px 0" />
+      <div class="profile-grid">
+        <article class="card profile-main">
+          <h3 style="color:var(--blue);margin-bottom:12px">Biography</h3>
+          <p>
+            I am a B.A. (Hons) Translation student in Cross-Cultural &amp; Corporate Communication at Lingnan University, with minors in Economics and Political Science. My research interests centre on individualism–collectivism, cultural change, quantitative sociology, and empirical linguistics.
+          </p>
+          <p>
+            Since January 2025, I have worked as a Research Assistant in Lingnan University’s Department of Sociology and Social Policy under Assistant Professor Plamen Akaliyski, contributing to literature synthesis, dataset construction, data management, statistical analysis, and the Comparative Culturology Lab. I will undertake an exchange in the Department of Sociology at National Taiwan University from September 2026 to January 2027.
+          </p>
 
-        <h3 style="margin:0 0 10px;color:var(--blue)">Curriculum Vitae</h3>
-        <a class="btn secondary" href="docs/cv_yechengyu.pdf" target="_blank" rel="noopener noreferrer">Open CV (PDF)</a>
+          <hr class="divider" />
+
+          <h3 style="color:var(--blue);margin-bottom:12px">Research orientation</h3>
+          <p>
+            My work combines survey data, corpora, geospatial indicators, remote sensing, historical records, and statistical modelling. I am particularly interested in translating theoretical claims about culture and language into transparent, testable measures.
+          </p>
+
+          <hr class="divider" />
+
+          <div class="link-row">
+            <a class="btn secondary" href="docs/cv_yechengyu.pdf" target="_blank" rel="noopener noreferrer">Open CV (PDF)</a>
+            <a class="btn secondary" href="https://www.comparativeculturology.com/" target="_blank" rel="noopener noreferrer">Comparative Culturology Lab</a>
+          </div>
+        </article>
+
+        <aside class="profile-side" aria-label="Academic details">
+          <div class="card detail-card">
+            <h3>Education</h3>
+            <p>B.A. (Hons) Translation, Lingnan University<br />Minors: Economics and Political Science</p>
+          </div>
+          <div class="card detail-card">
+            <h3>Exchange</h3>
+            <p>Department of Sociology, National Taiwan University<br />September 2026–January 2027</p>
+          </div>
+          <div class="card detail-card">
+            <h3>Methods</h3>
+            <p>R, Stata, LaTeX, Python-assisted workflows, GIS, corpus analysis, data visualisation, and quantitative modelling</p>
+          </div>
+          <div class="card detail-card">
+            <h3>Selected recognition</h3>
+            <p>President’s List; HKSAR Outstanding Performance Scholarship; Department of Translation Scholarship; Best Economics Minor Student Award</p>
+          </div>
+        </aside>
       </div>
     </section>
 
     <section id="research" data-section>
-      <h2>Research Portfolio</h2>
-      <p class="muted" style="margin-top:6px">Working papers and ongoing academic inquiries.</p>
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Current scholarship</p>
+          <h2>Research portfolio</h2>
+          <p class="section-intro">Papers under review and active working papers. Author roles and collaborators reflect the latest available project records.</p>
+        </div>
+        <div class="updated">3 under review · 6 working papers</div>
+      </div>
 
-      <div style="display:grid;gap:14px;margin-top:18px">
-        <article class="card paper">
-          <div class="tag">Working Paper</div>
-          <h3 style="margin:10px 0 6px">Application of Gravity Equation in Cross-Cultural Translation</h3>
+      <div class="research-toolbar" role="group" aria-label="Filter research by status">
+        <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All projects</button>
+        <button class="filter-btn" type="button" data-filter="review" aria-pressed="false">Under review</button>
+        <button class="filter-btn" type="button" data-filter="working" aria-pressed="false">Working papers</button>
+      </div>
+
+      <div class="research-list" id="researchList">
+        <article class="card paper" data-status="review">
+          <div class="paper-top">
+            <div>
+              <span class="status">Under peer review</span>
+              <h3 class="paper-title">Measuring Translational Orientation in Chinese Literary Translation: A Zipfian Approach</h3>
+            </div>
+            <div class="paper-role">First author</div>
+          </div>
+          <p class="authors">With Plamen Akaliyski and Xuke Zeng</p>
+          <p class="venue">Under review at <em>Journal of Quantitative Linguistics</em></p>
+          <p class="paper-summary">Develops Zipfian indicators to quantify translational orientation across Chinese literary translations and tests whether lexical distributions encode systematic translation choices.</p>
           <div class="tags">
-            <span class="pill">#Economics</span>
-            <span class="pill">#Translation</span>
-            <span class="pill">#Quantitative</span>
+            <span class="pill">Empirical linguistics</span>
+            <span class="pill">Zipf’s law</span>
+            <span class="pill">Literary translation</span>
           </div>
         </article>
 
-        <article class="card paper">
-          <div class="tag">Working Paper</div>
-          <h3 style="margin:10px 0 6px">Musical Fans, Dear Evan Hansen, Skopos Theory</h3>
-          <p class="muted" style="margin:0 0 10px;font-style:italic">with ZENG Xuke, 2025</p>
+        <article class="card paper" data-status="review">
+          <div class="paper-top">
+            <div>
+              <span class="status">Under peer review</span>
+              <h3 class="paper-title">Coupling Coordination Between Urban Heat Island Effect and Low-Carbon Construction Based on Multi-Source Remote Sensing: A Case Study of Sichuan Province, China</h3>
+            </div>
+            <div class="paper-role">Second author</div>
+          </div>
+          <p class="authors">Junjie Mu, Chengyu Ye, Shiqi Wang, Mengqin Zhou, and Qianrong Zhang</p>
+          <p class="venue">Under review at <em>Atmospheric Environment: X</em></p>
+          <p class="paper-summary">Integrates multi-source remote-sensing indicators to model the coupling between urban heat-island intensity and low-carbon construction across Sichuan Province.</p>
           <div class="tags">
-            <span class="pill">#Skopos Theory</span>
-            <span class="pill">#Musical Theatre</span>
+            <span class="pill">Remote sensing</span>
+            <span class="pill">Urban climate</span>
+            <span class="pill">Low-carbon development</span>
           </div>
         </article>
 
-        <article class="card paper">
-          <div class="tag">Working Paper</div>
-          <h3 style="margin:10px 0 6px">
-            Can Translation Strategies Be Revealed Empirically? Zipf’s Law in 28 Chinese Translations of Animal Farm
-          </h3>
-          <p class="muted" style="margin:0 0 10px;font-style:italic">with YANG Yuhang &amp; ZENG Xuke, 2025</p>
+        <article class="card paper" data-status="review">
+          <div class="paper-top">
+            <div>
+              <span class="status">Under peer review</span>
+              <h3 class="paper-title">Did Losers Kill Green GDP? Measurement Persistence and Provincial Reordering in China</h3>
+            </div>
+            <div class="paper-role">First author</div>
+          </div>
+          <p class="authors">With Weizhi Wang, Tingyu Lin, Chun Hei Sze, Xintong Chen, Hongyan Li, Pak Yu Paxton Chan, and Hongshen Zhu</p>
+          <p class="venue">Under review at <em>Humanities and Social Sciences Communications</em></p>
+          <p class="paper-summary">Reconstructs provincial GGDP/GDP trajectories for 2004–2024 and evaluates measurement persistence, rank reordering, and the political structure of policy winners and losers.</p>
           <div class="tags">
-            <span class="pill">#Empirical Linguistics</span>
-            <span class="pill">#Zipf's Law</span>
-            <span class="pill">#Translation</span>
+            <span class="pill">Green accounting</span>
+            <span class="pill">Provincial China</span>
+            <span class="pill">Policy measurement</span>
+          </div>
+        </article>
+
+        <article class="card paper" data-status="working">
+          <div class="paper-top">
+            <div>
+              <span class="status">Working paper</span>
+              <h3 class="paper-title">From Habitat to Individualism–Collectivism: Ecological–Developmental Pathways across China</h3>
+            </div>
+            <div class="paper-role">Co-author · equal contribution</div>
+          </div>
+          <p class="authors">With Plamen Akaliyski</p>
+          <p class="paper-summary">Tests ecological and developmental pathways to within-China variation in individualism–collectivism using subnational survey, climate, agriculture, and modernization data.</p>
+          <div class="tags">
+            <span class="pill">Individualism–collectivism</span>
+            <span class="pill">Cultural change</span>
+            <span class="pill">Subnational China</span>
+          </div>
+        </article>
+
+        <article class="card paper" data-status="working">
+          <div class="paper-top">
+            <div>
+              <span class="status">Working paper</span>
+              <h3 class="paper-title">Beyond Period Labels: Modelling Diachronic Change in Written Chinese with Piotrovskij-Type Diffusion Models</h3>
+            </div>
+            <div class="paper-role">First author</div>
+          </div>
+          <p class="authors">With Bo Li, Xuke Zeng, Weizhi Wang, Zixuan Xing, Yutong Zhao, and Yixin Zhao</p>
+          <p class="paper-summary">Models diachronic change in written Chinese with diffusion curves and dense time bins, replacing broad period labels with directly estimated trajectories.</p>
+          <div class="tags">
+            <span class="pill">Diachronic linguistics</span>
+            <span class="pill">Piotrovskij models</span>
+            <span class="pill">Chinese corpora</span>
+          </div>
+        </article>
+
+        <article class="card paper" data-status="working">
+          <div class="paper-top">
+            <div>
+              <span class="status">Working paper</span>
+              <h3 class="paper-title">Recommended Parameter Values for Zipf’s Law in Chinese: A Rule-of-Thumb Guide across Units, Registers, and Estimators</h3>
+            </div>
+            <div class="paper-role">First author</div>
+          </div>
+          <p class="authors">With Yixin Zhao, Xuke Zeng, Tingyu Lin, and Chun Hei Sze</p>
+          <p class="paper-summary">Estimates practical benchmark ranges for Chinese Zipf exponents across linguistic units, registers, and estimation strategies, with model and sampling robustness checks.</p>
+          <div class="tags">
+            <span class="pill">Quantitative linguistics</span>
+            <span class="pill">Zipf’s law</span>
+            <span class="pill">Corpus methodology</span>
+          </div>
+        </article>
+
+        <article class="card paper" data-status="working">
+          <div class="paper-top">
+            <div>
+              <span class="status">Working paper</span>
+              <h3 class="paper-title">Modelling the Detectability of Translationese in Literary English: Endogenous Lexical Structure, Source-Language Metadata, and Zipfian Parameters in TRANSCOMP</h3>
+            </div>
+            <div class="paper-role">First author</div>
+          </div>
+          <p class="authors">With Tingyu Lin, Chun Hei Sze, Yixin Zhao, and Weizhi Wang</p>
+          <p class="paper-summary">Tests how endogenous lexical structure, source-language metadata, and Zipfian parameters shape translationese detectability in a large literary English corpus.</p>
+          <div class="tags">
+            <span class="pill">Translationese</span>
+            <span class="pill">TRANSCOMP</span>
+            <span class="pill">Lexical distributions</span>
+          </div>
+        </article>
+
+        <article class="card paper" data-status="working">
+          <div class="paper-top">
+            <div>
+              <span class="status">Working paper</span>
+              <h3 class="paper-title">From Terrorist Shock to Migration Control: Regional Migration Restrictions in Russia after the Crocus City Hall Attack</h3>
+            </div>
+            <div class="paper-role">Co-author · corresponding author</div>
+          </div>
+          <p class="authors">With Kamilla Muratbekova, Xintong Chen, and Shakira Ilyasova</p>
+          <p class="paper-summary">Examines whether the Crocus City Hall attack altered regional migration restrictions and labour-migration governance affecting Central Asian migrants in Russia.</p>
+          <div class="tags">
+            <span class="pill">Migration policy</span>
+            <span class="pill">Terrorism</span>
+            <span class="pill">Russia and Central Asia</span>
+          </div>
+        </article>
+
+        <article class="card paper" data-status="working">
+          <div class="paper-top">
+            <div>
+              <span class="status">Working paper</span>
+              <h3 class="paper-title">Does Cool Water Travel Inland? Testing and Localizing Cool Water Theory through River-System Access in China</h3>
+            </div>
+            <div class="paper-role">First author</div>
+          </div>
+          <p class="authors">With Plamen Akaliyski and Xintong Chen</p>
+          <p class="paper-summary">Tests whether river-system access helps localize Cool Water Theory across inland Chinese regions and clarifies the role of hydrological access in ecological-developmental pathways.</p>
+          <div class="tags">
+            <span class="pill">Cool Water Theory</span>
+            <span class="pill">Hydrology</span>
+            <span class="pill">Spatial analysis</span>
           </div>
         </article>
       </div>
     </section>
 
     <section id="gallery" data-section>
-      <h2>Visual Gallery</h2>
-      <p class="muted" id="galleryStatus" style="margin-top:6px">Loading gallery…</p>
-      <div class="gallery-grid" id="galleryGrid" style="margin-top:18px"></div>
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Selected moments</p>
+          <h2>Gallery</h2>
+          <p class="section-intro">A small collection from academic life, travel, and everyday observation.</p>
+        </div>
+        <div class="updated">Click any image for a larger view</div>
+      </div>
+
+      <div class="gallery-note">
+        <span id="galleryStatus" role="status" aria-live="polite">Loading selected photographs…</span>
+        <span id="galleryCount"></span>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
     </section>
   </main>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightboxTitle">
+    <div class="lightbox-frame">
+      <div class="lightbox-image-wrap">
+        <img class="lightbox-image" id="lightboxImage" alt="" />
+      </div>
+      <div class="lightbox-meta">
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">×</button>
+    </div>
+  </dialog>
 
   <footer>
     <div class="container footer-row">
       <div>
-        <strong style="color:var(--blue)">YE Chengyu (Allen)</strong>
-        <div class="muted small" style="margin-top:4px">© 2025 — All rights reserved.</div>
+        <div class="footer-name">YE Chengyu (Allen)</div>
+        <div class="muted small">© <span id="year"></span> · Academic profile</div>
       </div>
-      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
-        <a class="muted" href="mailto:chengyuye@ln.hk">chengyuye@ln.hk</a>
-        <span class="muted" aria-hidden="true">•</span>
-        <a class="muted" href="#" title="Add your LinkedIn URL">LinkedIn</a>
-        <span class="muted" aria-hidden="true">•</span>
-        <a class="muted" href="#" title="Add your GitHub URL">GitHub</a>
+      <div class="footer-links">
+        <a href="mailto:chengyuye@ln.hk">Email</a>
+        <span class="dot" aria-hidden="true">•</span>
+        <a href="https://www.linkedin.com/in/yechengyu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <span class="dot" aria-hidden="true">•</span>
+        <a href="https://github.com/abycy2718-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
   </footer>
@@ -360,8 +936,7 @@
   <script>
     (function () {
       const sections = Array.from(document.querySelectorAll("[data-section]"));
-      const links = Array.from(document.querySelectorAll("a[data-tab]"));
-
+      const tabLinks = Array.from(document.querySelectorAll("a[data-tab]"));
       const menuBtn = document.getElementById("menuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
 
@@ -372,22 +947,35 @@
       }
 
       function setActive(tabId, { pushHash = true } = {}) {
-        sections.forEach(s => s.classList.toggle("active", s.id === tabId));
-        links.forEach(a => {
-          const isActive = a.getAttribute("data-tab") === tabId;
-          if (isActive) a.setAttribute("aria-current", "page");
-          else a.removeAttribute("aria-current");
+        const target = sections.some(section => section.id === tabId) ? tabId : "home";
+
+        sections.forEach(section => {
+          section.classList.toggle("active", section.id === target);
         });
-        if (pushHash && location.hash !== "#" + tabId) history.pushState(null, "", "#" + tabId);
+
+        tabLinks.forEach(link => {
+          const active = link.dataset.tab === target;
+          if (active) link.setAttribute("aria-current", "page");
+          else link.removeAttribute("aria-current");
+        });
+
+        if (pushHash && location.hash !== "#" + target) {
+          history.pushState(null, "", "#" + target);
+        }
+
+        document.title = target === "home"
+          ? "YE Chengyu (Allen) | Academic Profile"
+          : target.charAt(0).toUpperCase() + target.slice(1) + " | YE Chengyu (Allen)";
       }
 
-      links.forEach(a => {
-        a.addEventListener("click", (e) => {
-          const tabId = a.getAttribute("data-tab");
+      tabLinks.forEach(link => {
+        link.addEventListener("click", event => {
+          const tabId = link.dataset.tab;
           if (!tabId) return;
-          e.preventDefault();
+          event.preventDefault();
           setActive(tabId);
           closeMobileMenu();
+          window.scrollTo({ top: 0, behavior: "smooth" });
         });
       });
 
@@ -398,79 +986,195 @@
           menuBtn.setAttribute("aria-expanded", String(opening));
         });
 
-        document.addEventListener("click", (e) => {
+        document.addEventListener("click", event => {
           if (mobileMenu.hidden) return;
-          const t = e.target;
-          if (t === menuBtn || mobileMenu.contains(t)) return;
+          const target = event.target;
+          if (target === menuBtn || mobileMenu.contains(target)) return;
           closeMobileMenu();
         });
       }
 
       function syncFromHash() {
-        const tabId = (location.hash || "#home").slice(1);
-        const exists = sections.some(s => s.id === tabId);
-        setActive(exists ? tabId : "home", { pushHash: false });
+        setActive((location.hash || "#home").slice(1), { pushHash: false });
       }
       window.addEventListener("hashchange", syncFromHash);
       window.addEventListener("popstate", syncFromHash);
       syncFromHash();
 
-      // Gallery
+      // Research filtering
+      const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));
+      const papers = Array.from(document.querySelectorAll(".paper[data-status]"));
+
+      filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          const filter = button.dataset.filter || "all";
+          filterButtons.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+          papers.forEach(paper => {
+            paper.hidden = filter !== "all" && paper.dataset.status !== filter;
+          });
+        });
+      });
+
+      // Gallery: hard-coded entries make the section work immediately. The manifest
+      // generated by the existing GitHub Pages workflow is also read so future images
+      // added to /images appear automatically.
+      const gallerySeed = [
+        {
+          src: "images/81a2696eb60389e5a368765a4a2286fb.jpg",
+          title: "A View from the Trail",
+          caption: "Travel, landscape, and time away from the desk.",
+          alt: "Allen standing at a mountain viewpoint overlooking reservoirs and hills"
+        },
+        {
+          src: "images/Weixin Image_20250204230530.jpg",
+          title: "Quiet Company",
+          caption: "Two cats resting together.",
+          alt: "Two cats resting closely together"
+        },
+        {
+          src: "images/Weixin Image_20250329003829.jpg",
+          title: "Everyday Observation",
+          caption: "A cat walking through a vegetable plot.",
+          alt: "A black-and-white cat walking between rows of vegetables"
+        },
+        {
+          src: "images/screenshot-1759313880604.png",
+          title: "Academic Life",
+          caption: "A moment from a university event.",
+          alt: "Allen listening during a university event"
+        }
+      ];
+
+      const excludedGalleryFiles = new Set([
+        "images/logo.png",
+        "images/e42168f4d5afd1b48ce7be593b894f10.jpg"
+      ]);
+
       const statusEl = document.getElementById("galleryStatus");
+      const countEl = document.getElementById("galleryCount");
       const gridEl = document.getElementById("galleryGrid");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+      const lightboxTitle = document.getElementById("lightboxTitle");
+      const lightboxCaption = document.getElementById("lightboxCaption");
+      const lightboxClose = document.getElementById("lightboxClose");
+
+      function humanizeFilename(src) {
+        const file = String(src).split("/").pop() || String(src);
+        return file
+          .replace(/\.[^/.]+$/, "")
+          .replace(/^Weixin Image /i, "Photo ")
+          .replace(/^screenshot[-_]?/i, "Photo ")
+          .replace(/[_-]+/g, " ")
+          .replace(/\s+/g, " ")
+          .trim() || "Gallery image";
+      }
+
+      function normaliseGalleryItem(item) {
+        if (typeof item === "string") {
+          return {
+            src: item,
+            title: humanizeFilename(item),
+            caption: "Selected photograph.",
+            alt: humanizeFilename(item)
+          };
+        }
+        if (!item || typeof item !== "object" || !item.src) return null;
+        return {
+          src: String(item.src),
+          title: String(item.title || humanizeFilename(item.src)),
+          caption: String(item.caption || "Selected photograph."),
+          alt: String(item.alt || item.title || humanizeFilename(item.src))
+        };
+      }
+
+      function openLightbox(item) {
+        if (!lightbox || !lightboxImage || !lightboxTitle || !lightboxCaption) return;
+        lightboxImage.src = item.src;
+        lightboxImage.alt = item.alt;
+        lightboxTitle.textContent = item.title;
+        lightboxCaption.textContent = item.caption;
+        if (typeof lightbox.showModal === "function") lightbox.showModal();
+      }
+
+      function closeLightbox() {
+        if (lightbox && lightbox.open) lightbox.close();
+      }
+
+      function renderGallery(items) {
+        if (!gridEl || !statusEl || !countEl) return;
+        gridEl.replaceChildren();
+
+        items.forEach(item => {
+          const card = document.createElement("button");
+          card.type = "button";
+          card.className = "img-card";
+          card.setAttribute("aria-label", "Open image: " + item.title);
+
+          const thumb = document.createElement("div");
+          thumb.className = "img-thumb";
+
+          const image = document.createElement("img");
+          image.src = item.src;
+          image.alt = item.alt;
+          image.loading = "lazy";
+          image.decoding = "async";
+
+          const meta = document.createElement("div");
+          meta.className = "img-meta";
+
+          const title = document.createElement("div");
+          title.className = "img-title";
+          title.textContent = item.title;
+
+          const caption = document.createElement("div");
+          caption.className = "img-caption";
+          caption.textContent = item.caption;
+
+          thumb.appendChild(image);
+          meta.append(title, caption);
+          card.append(thumb, meta);
+          card.addEventListener("click", () => openLightbox(item));
+          gridEl.appendChild(card);
+        });
+
+        statusEl.textContent = items.length ? "Gallery ready." : "No gallery images are available.";
+        countEl.textContent = items.length ? items.length + (items.length === 1 ? " photograph" : " photographs") : "";
+      }
 
       async function loadGallery() {
-        if (!statusEl || !gridEl) return;
+        const merged = new Map();
+        gallerySeed.forEach(item => merged.set(item.src, item));
+
         try {
-          const res = await fetch("gallery-manifest.json", { cache: "no-store" });
-          if (!res.ok) throw new Error("HTTP " + res.status);
-          const data = await res.json();
-          const images = Array.isArray(data && data.images) ? data.images : [];
-
-          gridEl.innerHTML = "";
-          if (!images.length) {
-            statusEl.textContent = "No gallery images found. Add images to /images (excluding logo.png and the portrait).";
-            return;
+          const response = await fetch("gallery-manifest.json", { cache: "no-store" });
+          if (response.ok) {
+            const data = await response.json();
+            const manifestImages = Array.isArray(data && data.images) ? data.images : [];
+            manifestImages
+              .map(normaliseGalleryItem)
+              .filter(Boolean)
+              .filter(item => !excludedGalleryFiles.has(item.src))
+              .forEach(item => {
+                if (!merged.has(item.src)) merged.set(item.src, item);
+              });
           }
-
-          statusEl.textContent = "Click an image to open full size.";
-
-          for (const src of images) {
-            const file = String(src).split("/").pop() || src;
-            const title = file.replace(/\.[^/.]+$/, "").replace(/[_-]+/g, " ").trim() || file;
-
-            const card = document.createElement("a");
-            card.className = "img-card";
-            card.href = src;
-            card.target = "_blank";
-            card.rel = "noopener noreferrer";
-            card.title = file;
-
-            const thumb = document.createElement("div");
-            thumb.className = "img-thumb";
-
-            const img = document.createElement("img");
-            img.src = src;
-            img.alt = title;
-            img.loading = "lazy";
-            img.decoding = "async";
-
-            thumb.appendChild(img);
-
-            const meta = document.createElement("div");
-            meta.className = "img-meta";
-            meta.innerHTML = "<div style='font-weight:950'>" + title + "</div><div class='muted small' style='margin-top:4px'>" + file + "</div>";
-
-            card.appendChild(thumb);
-            card.appendChild(meta);
-            gridEl.appendChild(card);
-          }
-        } catch (e) {
-          statusEl.textContent = "Gallery unavailable (could not load gallery-manifest.json). Check that your GitHub Actions workflow deployed it.";
+        } catch (error) {
+          // The seed images still render, so the gallery remains fully functional.
         }
+
+        renderGallery(Array.from(merged.values()));
+      }
+
+      if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+      if (lightbox) {
+        lightbox.addEventListener("click", event => {
+          if (event.target === lightbox) closeLightbox();
+        });
       }
 
       loadGallery();
+      document.getElementById("year").textContent = String(new Date().getFullYear());
     })();
   </script>
 </body>
