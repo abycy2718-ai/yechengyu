@@ -546,8 +546,7 @@
       </div>
 
       <div class="gallery-note">
-        <span id="galleryStatus" role="status" aria-live="polite">Loading selected photographs…</span>
-        <span id="galleryCount"></span>
+        <span id="galleryCount" role="status" aria-live="polite"></span>
       </div>
       <div class="gallery-grid" id="galleryGrid"></div>
     </section>
@@ -751,7 +750,6 @@
         "images/home.jpg"
       ]);
 
-      const statusEl = document.getElementById("galleryStatus");
       const countEl = document.getElementById("galleryCount");
       const gridEl = document.getElementById("galleryGrid");
       const lightbox = document.getElementById("lightbox");
@@ -803,7 +801,7 @@
       }
 
       function renderGallery(items) {
-        if (!gridEl || !statusEl || !countEl) return;
+        if (!gridEl || !countEl) return;
         gridEl.replaceChildren();
 
         items.forEach(item => {
@@ -839,8 +837,9 @@
           gridEl.appendChild(card);
         });
 
-        statusEl.textContent = items.length ? "Gallery ready." : "No gallery images are available.";
-        countEl.textContent = items.length ? items.length + (items.length === 1 ? " photograph" : " photographs") : "";
+        countEl.textContent = items.length
+          ? items.length + (items.length === 1 ? " photograph" : " photographs")
+          : "No gallery images are available.";
       }
 
       async function loadGallery() {
